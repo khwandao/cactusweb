@@ -1,5 +1,5 @@
 from django import template
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Species, Cacti
 from django.shortcuts import get_object_or_404, render
@@ -14,3 +14,8 @@ def home(request):
     }
 
     return HttpResponse(template.render(context, request))
+
+
+def detail(request):
+    return render(request, 'detail.html')
+
