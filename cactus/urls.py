@@ -6,5 +6,5 @@ app_name = 'cactus'
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path('<int:species_id>', views.detail, name='detail'),
+    path('<int:species_id>/', views.detail),
 ]
