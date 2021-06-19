@@ -23,5 +23,6 @@ class Cacti(models.Model):
     size = models.FloatField(default=0, null=False)
     description = models.CharField(default=None, null=True, max_length=500)
     photo = models.CharField(max_length=200, blank=True)
+    
     def __str__(self):
         return self.name

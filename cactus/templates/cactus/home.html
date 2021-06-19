@@ -2,26 +2,29 @@
 {% load static %}
 
 {% block content %}
-    <div class="jumbotron text-center">
+    <div class="jumbotron text-center" style="background-color: lightblue;">
         
         <h1>หนามจันท์แคคตัส</h1>
         <p>แคคตัสสวยๆหลากหลายสายพันธ์ุอยู่ที่นี่แล้ว!!!</p>
-      </div>
+    </div>
 
       <div class="container"> 
+        
         <div class="row">
             
         {% for species in species_list %}
-          <div class="col-sm-4">            
+          <div class="col-sm-4 text-center">
             <img src="/static/images/{{species.photo}}" width="200" height="200"/>
-            <h3><a href="/cactus/{{ species.id }}/">{{ species.name }}</a></h3>
+            <h3><a href="/species/{{ species.id }}/">{{ species.name }}</a></h3>
             <p>{{species.description}}</p>
           </div>
         {% endfor %}
     
     
         </div>
-    </div>
+
+
+      </div>
 
 {% endblock %}
 

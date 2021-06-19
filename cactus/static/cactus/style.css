@@ -11,11 +11,43 @@ li a {
 p {
     color:rgb(46, 43, 226);
 }
-
 body {
-    background-color: rgb(8, 6, 17);
+    background-color: lightblue;
+}
+
+/*
+h4 {
+    color:rgb(187, 22, 179);
+}
+*/
+
+
+
+.row.d-flex {
+    height: 100vw;
+    max-height: calc(100vh * 2);
+}
+
+@media (min-width: 600px) {
+    .pb-3 {
+        flex: initial;
+        display: block;
+        
+    }
+}
+
+@media (min-width: 600px) and (max-width: 730px) {
+    .row.d-flex {
+        max-height: 1200px;
+        height: 1200px;
+    }
 }
 
 
+@media (min-width: 731px) and (max-width: 1200px) {
+    .row.d-flex {
+        max-height: 1200px;
+    }
+}
 
 

@@ -1,0 +1,91 @@
+{% extends "cactus/layout.html" %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="jumbotron text-center"  style="background-color: lightblue;">
+    <h1>{{ species_name }}</h1>
+</div>
+
+<!-- <table class="table table-hover col-8 offset-2">
+    <thead>
+      <tr>
+        <th scope="col">&nbsp;</th>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Pot Type</th>
+        <th scope="col">Color Type</th>
+        <th scope="col">Rib</th>
+        <th scope="col">Size (cm)</th>
+        <th scope="col">DOB</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+
+    <tbody>
+        
+        {% for cactus in cacti %}
+      <tr>
+        <td><img src="/static/images/cacti/{{cactus.photo}}" width="50" height="50"/></td>
+        <td>{{ cactus.id }}</td>
+        <td>{{ cactus.name }}</td>
+        <td>{{ cactus.pot_type }}</td>
+        <td>{{ cactus.color_type }}</td> 
+
+        {% if cactus.rib is not None %}
+        <td>{{ cactus.rib }}</td>
+        {% else %}
+        <td>ไม่ระบุ</td>
+        {% endif %}
+
+        <td>{{ cactus.size }}</td>
+        <td>{{ cactus.dob }}</td>
+
+        <td>
+          <form action="/cactus/view_cactus_detail/" method="post" autocomplete="off">
+            {% csrf_token %}
+            <button type='button' onclick='view_cactus_detail("{{cactus.id}}");' class='btn btn-info btn-xs' data-toggle='modal'>View</button>
+          </form>
+        </td>
+      </tr>
+        {% endfor %}
+
+    </tbody>
+
+  </table> -->
+
+
+  <div class="container"> 
+    <div class="row">
+
+
+
+
+        <div class="row">
+
+        
+            {% for cactus in cacti %}
+            <div class="col-3">   
+                <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" width="300" height="350"/></a>         
+                <p>{{cactus.description}}</p>
+              
+            </div>
+            {% endfor %}
+            
+        
+        
+        </div>
+
+
+        
+    </div>
+
+  </div>
+
+
+
+
+
+
+{% endblock %}
