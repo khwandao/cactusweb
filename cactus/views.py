@@ -1,9 +1,9 @@
-from django import template
+#from django import template
 from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Species, Cacti
 from django.shortcuts import get_object_or_404, render
-from django.http import JsonResponse
+#from django.http import JsonResponse
 
 
 def home(request):
@@ -64,4 +64,6 @@ def cacti_detail(request, cactus_id):
 
 
 def cactus_page(request):
-    return HttpResponse("hello")
+
+
+    return render(request, 'cactus/cactus_page.html', {'name':'hello'})
