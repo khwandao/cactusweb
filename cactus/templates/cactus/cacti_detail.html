@@ -3,9 +3,9 @@
 
 {% block content %}
 
-<div class="jumbotron text" style="background-color: lightblue;">
+<div class="jumbotron text" style="background-color: #212529;">
         
-    <h1>หนามจันท์แคคตัส</h1>
+    <h1 class="c2">หนามจันท์แคคตัส</h1>
     <p>by kapom</p>
 </div>
 
@@ -21,7 +21,7 @@
                 </div>
 
                 <div class="col-9 float-right">
-                    <h1>{{cactus.description}}</h1>
+                    <h1 class="c2">{{cactus.description}}</h1>
                     <p>........</p>
                 </div>
 
@@ -34,6 +34,10 @@
     <div class="clearfix"></div>
 
     <br><br><br><br><br><br>
+
+    <div class = "text-center">
+        <p>More like this</p>
+    </div>
 
     <div class="row">
         {% for cactus in cacti_list %}

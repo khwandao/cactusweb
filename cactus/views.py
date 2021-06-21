@@ -63,15 +63,5 @@ def cacti_detail(request, cactus_id):
     return render(request, 'cactus/cacti_detail.html', {'cacti':cacti, 'cacti_list':cacti_list})
 
 
-'''
-def cacti_detail(request, species_id): 
-
-    try:
-        cacti = Cacti.objects.filter(species_id=species_id)      
-    except Cacti.DoesNotExist:        
-        raise Http404("Cacti does not exist")
-
-    
-
-    return render(request, 'cactus/cacti_detail.html', {'cacti':cacti, 'species_id':species_id})
-'''
+def cactus_page(request):
+    return HttpResponse("hello")

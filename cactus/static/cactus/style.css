@@ -2,18 +2,20 @@ h1 {
     color:rgb(22, 140, 187);
 }
 
-/*
-li a {
-    color: rgb(22, 140, 187);
-}
-*/
+
+/* li a {
+    color: #ffffff;
+} */
+
 
 p {
-    color:rgb(46, 43, 226);
+    color: #fff;
 }
+
 body {
-    background-color: lightblue;
+    background-color: #212529;
 }
+
 
 /*
 h4 {
@@ -50,4 +52,27 @@ h4 {
     }
 }
 
+
+/*Custom style 1*/
+.c1 {
+    color: #61892f;
+    text-decoration: none;
+}
+.c1:hover {
+    color: #86c232;
+    text-decoration: none;
+}
+
+.c2 {
+    color: #86c232;
+}
+.c3  {
+    color: #222629;
+}
+.c4 {
+    color: #474b4f;
+}
+.c5 {
+    color: #6b6e70;
+}
 

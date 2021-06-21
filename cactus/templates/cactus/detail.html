@@ -4,9 +4,36 @@
 
 {% block content %}
 
-<div class="jumbotron text-center"  style="background-color: lightblue;">
-    <h1>{{ species_name }}</h1>
+<div class="jumbotron text-center " style="background-color: #212529;">
+    <h1 class="c2">{{ species_name }}</h1>
 </div>
+
+
+<div class="container"> 
+      
+  <div class="row">
+
+
+
+
+
+      
+          {% for cactus in cacti %}
+          <div class="col-sm-4 text-center">
+              <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="img-thumbnail" width="300" height="350"/></a>
+              
+              <p class="g1">{{cactus.description}}</p>
+
+          </div>
+          {% endfor %}
+          
+
+
+      
+  </div>
+
+</div>
+
 
 <!-- <table class="table table-hover col-8 offset-2">
     <thead>
@@ -56,32 +83,6 @@
   </table> -->
 
 
-  <div class="container"> 
-    <div class="row">
-
-
-
-
-        <div class="row">
-
-        
-            {% for cactus in cacti %}
-            <div class="col-3">   
-                <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" width="300" height="350"/></a>         
-                <p>{{cactus.description}}</p>
-              
-            </div>
-            {% endfor %}
-            
-        
-        
-        </div>
-
-
-        
-    </div>
-
-  </div>
 
 
 

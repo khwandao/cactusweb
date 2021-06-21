@@ -1,12 +1,13 @@
 {% extends "cactus/layout.html" %}
 {% load static %}
 
-{% block content %}
-    <div class="jumbotron text-center" style="background-color: lightblue;">
-        
-        <h1>หนามจันท์แคคตัส</h1>
+{% block content %}    
+    <div class="jumbotron text-center" style="background-color: #cebc81;">
+    <!--<div class="jumbotron text-center" style="background-image: url(' /static/images/bg/background.jpg');">-->
+        <h1 class="c4">หนามจันท์แคคตัส</h1>
         <p>แคคตัสสวยๆหลากหลายสายพันธ์ุอยู่ที่นี่แล้ว!!!</p>
     </div>
+
 
       <div class="container"> 
         
@@ -14,13 +15,21 @@
             
         {% for species in species_list %}
           <div class="col-sm-4 text-center">
-            <img src="/static/images/{{species.photo}}" width="200" height="200"/>
-            <h3><a href="/species/{{ species.id }}/">{{ species.name }}</a></h3>
+            
+            <img src="/static/images/{{species.photo}}" class="rounded-circle text-light" width="250" height="250" />
+            <!--<img src="images/avatar.svg" class="rounded" alt="Rounded Image">-->
+
+            <!--
+            <img src="images/avatar.svg" class="rounded" alt="Rounded Image">
+            <img src="images/avatar.svg" class="rounded-circle" alt="Circular Image">
+            <img src="images/avatar.svg" class="img-thumbnail" alt="Thumbnail Image">
+            -->
+
+            <h3><a class="c1" href="/species/{{ species.id }}/">{{ species.name }}</a></h3>
             <p>{{species.description}}</p>
           </div>
         {% endfor %}
-    
-    
+        
         </div>
 
 
