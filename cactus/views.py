@@ -58,8 +58,6 @@ def cacti_detail(request, cactus_id):
         raise Http404("Cacti does not exist")
 
     
-    
-
     return render(request, 'cactus/cacti_detail.html', {'cacti':cacti, 'cacti_list':cacti_list})
 
 

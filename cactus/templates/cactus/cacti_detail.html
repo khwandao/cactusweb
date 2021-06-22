@@ -3,26 +3,27 @@
 
 {% block content %}
 
-<div class="jumbotron text" style="background-color: #212529;">
-        
+<div class="jumbotron text pt-0 pl-3 pb-0" style="background-color: #212529;">        
     <h1 class="c2">หนามจันท์แคคตัส</h1>
-    <p>by kapom</p>
+    <p class="p-white">by kapom</p>
 </div>
 
+
+
 <div class="container">
+
     {% for cactus in cacti %}
        
             
-            <div class="col-12">
+            <div class="row">
 
-                <div class="col-3 float-left">
-                    <a href = "/static/images/cacti/{{cactus.photo}}"> <img src="/static/images/cacti/{{cactus.photo}}" width="300" height="350"/></a>
-                <!-- <img src="/static/images/cacti/{{cactus.photo}}" width="400" height="450"/>  -->
+                <div class="col-lg-3 float-left">
+                    <a href = "/static/images/cacti/{{cactus.photo}}"> <img src="/static/images/cacti/{{cactus.photo}}" class="img-fluid" /></a>                
                 </div>
 
-                <div class="col-9 float-right">
+                <div class="col-lg-9 float-right">
                     <h1 class="c2">{{cactus.description}}</h1>
-                    <p>........</p>
+                    <p class="p-white">........</p>
                 </div>
 
             </div>
@@ -33,17 +34,20 @@
 
     <div class="clearfix"></div>
 
-    <br><br><br><br><br><br>
+    <br><br>
 
+    <!--
     <div class = "text-center">
-        <p>More like this</p>
+        <p class="p-white">More like this</p>
     </div>
+    -->
 
     <div class="row">
+        <p class="p-white">More like this</p>
         {% for cactus in cacti_list %}
 
             <div class="col-2"> 
-                <a href = "/cactus/cacti_detail/{{cactus.id}}/"> <img src="/static/images/cacti/{{cactus.photo}}" width="150" height="175"/></a>
+                <a href = "/cactus/cacti_detail/{{cactus.id}}/"> <img src="/static/images/cacti/{{cactus.photo}}" class="img-fluid" /></a>
             
                 <p>{{cactus.description}}</p>
             </div>
