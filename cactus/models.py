@@ -20,10 +20,8 @@ class Species(models.Model):
     description = models.CharField(max_length=200, blank=True)
     photo = models.CharField(max_length=200, blank=True)
 
-    #แสดงชื่อแคคตัสในระบบหลังบ้าน
     def __str__(self):
         return self.name
-
 
 
 class Cacti(models.Model):
