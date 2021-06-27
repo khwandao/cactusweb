@@ -2,7 +2,6 @@ h1 {
     color:rgb(22, 140, 187);
 }
 
-
 /* li a {
     color: #ffffff;
 } */
@@ -12,8 +11,12 @@ h1 {
     color: #fff;
 }
 
-body {
+/* body {
     background-color: #212529;
+} */
+
+body {
+    background-color: #659dbd;
 }
 
 
@@ -75,4 +78,9 @@ h4 {
 .c5 {
     color: #6b6e70;
 }
-
+.c6 {
+    color: #ffb48f;
+}
+.c7 {
+    color: #def5e1;
+}

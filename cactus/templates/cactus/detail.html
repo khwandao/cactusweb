@@ -4,89 +4,56 @@
 
 {% block content %}
 
-<div class="jumbotron text-center " style="background-color: #212529;">
+<div class="text-center" style="background-color: #212529;">
     <h1 class="c2">{{ species_name }}</h1>
 </div>
 
 
 <div class="container"> 
-      
   <div class="row">
 
+    <h4 class="c6">ไม้ด่าง</h4>    
+    {% for cactus in color_type %}      
+      <div class="col-sm-2 text-center">
+        <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>              
+        <!-- <p class="p-white">{{cactus.description}}</p> -->
+        <p></p>
+      </div>  
+               
+    {% endfor %}
+    
+    
+    <h4 class="c6">ไม้เขียว</h4>
+    {% for cactus in green_type %}
+      <div class="col-sm-2 text-center">
+        <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>              
+        <p class="p-white">{{cactus.description}}</p>
+      </div>
+    {% endfor %}    
 
 
+    {% comment %}
+    <h4 class="c6">อื่นๆ</h4>
+    {% for cactus in other_type %}
+    <div class="col-sm-2 text-center">
+      <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>              
+      <p class="p-white">{{cactus.description}}</p>
+    </div>
+    {% endfor %}
+    {% endcomment %}
 
-
-      
-          {% for cactus in cacti %}
-          <div class="col-sm-4 text-center">
-              <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="img-thumbnail" width="300" height="350"/></a>
+          <!-- {% for cactus in cacti %}
+          <div class="col-sm-3 text-center">
+              <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>
               
               <p class="p-white">{{cactus.description}}</p>
 
           </div>
-          {% endfor %}
+          {% endfor %} --> 
           
-
-
-      
   </div>
 
 </div>
-
-
-<!-- <table class="table table-hover col-8 offset-2">
-    <thead>
-      <tr>
-        <th scope="col">&nbsp;</th>
-        <th scope="col">ID</th>
-        <th scope="col">Name</th>
-        <th scope="col">Pot Type</th>
-        <th scope="col">Color Type</th>
-        <th scope="col">Rib</th>
-        <th scope="col">Size (cm)</th>
-        <th scope="col">DOB</th>
-        <th scope="col">&nbsp;</th>
-      </tr>
-    </thead>
-
-    <tbody>
-        
-        {% for cactus in cacti %}
-      <tr>
-        <td><img src="/static/images/cacti/{{cactus.photo}}" width="50" height="50"/></td>
-        <td>{{ cactus.id }}</td>
-        <td>{{ cactus.name }}</td>
-        <td>{{ cactus.pot_type }}</td>
-        <td>{{ cactus.color_type }}</td> 
-
-        {% if cactus.rib is not None %}
-        <td>{{ cactus.rib }}</td>
-        {% else %}
-        <td>ไม่ระบุ</td>
-        {% endif %}
-
-        <td>{{ cactus.size }}</td>
-        <td>{{ cactus.dob }}</td>
-
-        <td>
-          <form action="/cactus/view_cactus_detail/" method="post" autocomplete="off">
-            {% csrf_token %}
-            <button type='button' onclick='view_cactus_detail("{{cactus.id}}");' class='btn btn-info btn-xs' data-toggle='modal'>View</button>
-          </form>
-        </td>
-      </tr>
-        {% endfor %}
-
-    </tbody>
-
-  </table> -->
-
-
-
-
-
-
 
 
 {% endblock %}

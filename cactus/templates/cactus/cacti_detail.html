@@ -18,12 +18,12 @@
             <div class="row">
 
                 <div class="col-lg-3 float-left">
-                    <a href = "/static/images/cacti/{{cactus.photo}}"> <img src="/static/images/cacti/{{cactus.photo}}" class="img-fluid" /></a>                
+                    <a href = "/static/images/cacti/{{cactus.photo}}"> <img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="300" height="350"/></a>                
                 </div>
 
                 <div class="col-lg-9 float-right">
-                    <h1 class="c2">{{cactus.description}}</h1>
-                    <p class="p-white">........</p>
+                    <h1 class="c2">{{cactus.name}}</h1>
+                    <p class="p-white">{{cactus.description}}</p>
                 </div>
 
             </div>
@@ -36,69 +36,21 @@
 
     <br><br>
 
-    <!--
-    <div class = "text-center">
-        <p class="p-white">More like this</p>
-    </div>
-    -->
 
     <div class="row">
         <p class="p-white">More like this</p>
         {% for cactus in cacti_list %}
 
             <div class="col-2"> 
-                <a href = "/cactus/cacti_detail/{{cactus.id}}/"> <img src="/static/images/cacti/{{cactus.photo}}" class="img-fluid" /></a>
+                <a href = "/cactus/cacti_detail/{{cactus.id}}/"> <img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250" /></a>
             
-                <p>{{cactus.description}}</p>
+                <!-- <p>{{cactus.description}}</p> -->
             </div>
-
-
-
-            <!-- {% if cactus.id != cactus_id %}
-    
-                <div class="col-2"> 
-                    <a href = "/cactus/cacti_detail/{{cactus.id}}/"> <img src="/static/images/cacti/{{cactus.photo}}" width="150" height="175"/></a>
-                    
-                    <p>{{cactus.description}}</p>
-                </div>
-
-            {% endif %} -->
 
         {% endfor %}
     </div>
 
-
-
 </div>
-
-<!-- <div class="container">
-    <div class="row">
-
-
-    {% if cacti.id != cactus.id %}
-        <div class="col-sm-3">            
-            <img src="/static/images/cacti/{{cactus.photo}}" width="200" height="200"/>
-            <h3><a href="/species/{{ species.id }}/">{{ species.name }}</a></h3>
-            <p>{{cactus.description}}</p>
-        </div>
-
-    {% endif %}
-        
-    {% for cactus.id in cacti.id %}
-      <div class="col-sm-3">            
-        <img src="/static/images/cacti/{{cactus.photo}}" width="200" height="200"/>
-        <h3><a href="/species/{{ species.id }}/">{{ species.name }}</a></h3>
-        <p>{{cactus.description}}</p>
-      </div>
-    {% endfor %}
-
-    </div>
-</div> -->
-
-
-    
-
-
 
 
 {% endblock %}
