@@ -24,28 +24,6 @@ def home(request):
     return HttpResponse(template.render(context, request))
 
 
-    '''
-    return render(
-        request, 
-        'cactus/home.html', 
-        {'species_list': species_list,}
-    )
-    '''
-'''
-def detail(request, species_id):
-    try:
-        cacti = Cacti.objects.filter(species_id=species_id)        
-    except Cacti.DoesNotExist:        
-        raise Http404("Cacti does not exist")
-
-    
-    for item in cacti:
-        species_name = item.species_id.name + " Page"
-        break
-
-    return render(request, 'cactus/detail.html', {'cacti': cacti, 'species_name': species_name })
-'''
-
 def detail(request, species_id):
     color_type = []
     green_type = []

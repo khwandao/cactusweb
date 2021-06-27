@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="text-center" style="background-color: #212529;">
+<div class="jumbotron text-center" style="background-color: #212529;">
     <h1 class="c2">{{ species_name }}</h1>
 </div>
 
@@ -15,14 +15,14 @@
     <h4 class="c6">ไม้ด่าง</h4>    
     {% for cactus in color_type %}      
       <div class="col-sm-2 text-center">
-        <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>              
-        <!-- <p class="p-white">{{cactus.description}}</p> -->
-        <p></p>
+        <a href="/cactus/cacti_detail/{{cactus.id}}/"><img src="/static/images/cacti/{{cactus.photo}}" class="rounded mx-auto d-block" width="200" height="250"/></a>   
+        <p></p> 
+        <p></p>          
       </div>  
                
     {% endfor %}
     
-    
+    <p></p>     
     <h4 class="c6">ไม้เขียว</h4>
     {% for cactus in green_type %}
       <div class="col-sm-2 text-center">
