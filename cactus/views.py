@@ -1,13 +1,9 @@
-#from django import template
 from django.http import HttpResponse, Http404
 from django.template import loader
 from .models import Species, Cacti
-from django.shortcuts import get_object_or_404, render
-#import matplotlib as plt
-#from django.http import JsonResponse
+from django.shortcuts import render
 
-import random
-import matplotlib
+
 from matplotlib import pyplot as plt
 import numpy as np
 import base64
@@ -48,10 +44,6 @@ def detail(request, species_id):
         else:
             other_type.append(item)
     
-    print('color_type: ', len(color_type))
-    print('green_type: ', len(green_type))
-    print('other_type: ', len(other_type))
-
     template = loader.get_template('cactus/detail.html')
     context = {
         'color_type': color_type,
@@ -61,10 +53,7 @@ def detail(request, species_id):
         'species_name': species_name,
     }
 
-    # return HttpResponse(template.render(cactus_name, cacti, species_id, request))
     return HttpResponse(template.render(context, request))
-
-    #return render(request, 'cactus/detail.html', cactus_name, {'cacti': cacti, 'species_name': species_name })
 
 
 def cacti_detail(request, cactus_id): 
@@ -86,12 +75,8 @@ def cacti_detail(request, cactus_id):
     except Cacti.DoesNotExist:        
         raise Http404("Cacti does not exist")
 
-    
+
     return render(request, 'cactus/cacti_detail.html', {'cacti':cacti, 'cacti_list':cacti_list})
-
-
-def cactus_page(request):
-    return render(request, 'cactus/cactus_page.html', {'name':'hello'})
 
 
 def chart(request):
@@ -141,3 +126,9 @@ def chart(request):
         'graphic': graphic
     }
     return HttpResponse(template.render(context, request))
+
+
+def cactus_page(request):
+    return render(request, 'cactus/cactus_page.html', {'name':'hello'})
+
+    
